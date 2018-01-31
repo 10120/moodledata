@@ -145,20 +145,24 @@
 
                     {{#rememberusername}}
                         <div class="rememberpass m-t-1">
-                            <input type="checkbox" name="rememberusername" id="rememberusername" value="1" {{#username}}checked="checked"{{/username}} />
-                            <label for="rememberusername">{{#str}} rememberusername, admin {{/str}}</label>
+                            <input type="checkbox" name="rememberusername" id="rememberusername" value="1" {{#username}}checked="checked"{{/username}}/>
+                            <label style="display:inline-block;vertical-align:top; font-size: 9pt; width: 75%; text-align: justify; for="rememberusername">{{#str}} rememberusername, admin {{/str}}
+                            </label>
                         </div>
                     {{/rememberusername}}
 
                     <button type="submit" class="btn btn-primary btn-block m-t-1" id="loginbtn">{{#str}}login{{/str}}</button>
+                    <div class="forgetpass m-t-1">
+                       <p><a href="{{forgotpasswordurl}}">{{#str}}forgotten{{/str}}</a></p>
+                        <div class="m-t-1">
+                            <span title="{{#str}} cookiesenabled {{/str}}">                                       
+                             {{{cookieshelpiconformatted}}}
+                        </div>
+                    </div>
                 </form>
             </div>
 
             <div class="col-md-4 push-md-3">
-                <div class="forgetpass m-t-1">
-                    <p><a href="{{forgotpasswordurl}}">{{#str}}forgotten{{/str}}</a></p>
-                </div>
-
                 <div class="m-t-l">
                     <h1 style="font-size: 16pt">Registrate para adquirir Curso</h1>
                     <form>
@@ -169,17 +173,13 @@
                         <input class="form-control" type="password" name="password" placeholder="Confirmar Contraseña">
                         <input class="form-control" type="tel" name="telefono" placeholder="Celular">
                         <br>
-                        <input style="display:inline-block;vertical-align:top;" type="checkbox" name="habeasdata">
-                        <label style="display:inline-block;vertical-align:top; font-size: 7pt; width: 70%; " for="habeasdata">Acepto terminos y condiciones de la politica de privacidad</label>
+                        <input style="display:inline-block;vertical-align:middle;" type="checkbox" name="habeasdata">
+                        <label style="display:inline-block;vertical-align:text-top; font-size: 9pt; width: 75%; text-align: justify; for="habeasdata">Acepto terminos y condiciones de la politica de privacidad</label>
                         <button class="btn btn-primary btn-block m-t-1" type="submit">enviar</button>
                     </form>
-                </div>  
-
-                <div class="m-t-1">
-                    {{#str}} cookiesenabled {{/str}}
-                    {{{cookieshelpiconformatted}}}
-                </div>
-            {{#canloginasguest}}
+                </div> 
+                
+            <!--{{#canloginasguest}}
                 <div class="m-t-2">
                     <p>{{#str}}someallowguest{{/str}}</p>
                     <form action="{{loginurl}}" method="post" id="guestlogin">
@@ -188,7 +188,7 @@
                         <button class="btn btn-secondary btn-block" type="submit">{{#str}}loginguest{{/str}}</button>
                     </form>
                 </div>
-            {{/canloginasguest}}
+            {{/canloginasguest}}-->
 
         {{#hasidentityproviders}}
                 <h6 class="m-t-2">{{#str}} potentialidps, auth {{/str}}</h6>
